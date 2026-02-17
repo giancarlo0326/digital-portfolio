@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Portfolio | Glassmorphism</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+
+    <div class="corner-toggle">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </div>
+        </label>
+    </div>
+
+    <nav class="pill-nav">
+        <div class="nav-links">
+            <a href="#intro">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#certs">Certifications</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+
+    <main class="content-wrapper">
+        <section id="intro" class="hero-section">
+            <div class="glass-widget">
+                <span class="badge">Hello World</span>
+                <h1>Gian Carlo <br><span class="gradient-text">Victorino</span></h1>
+                <p>I design and build sleek, modular interfaces. Welcome to my digital space.</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="glass-widget">
+                <h2 class="section-title">About Me</h2>
+                <p>Frontend enthusiast focused on high-end glassmorphism and user-centric design.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="glass-widget">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skill-grid">
+                    <span class="skill-pill">HTML5</span>
+                    <span class="skill-pill">CSS3/SCSS</span>
+                    <span class="skill-pill">JavaScript</span>
+                    <span class="skill-pill">Responsive Design</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="certs" class="section">
+            <div class="glass-widget">
+                <h2 class="section-title">Certifications</h2>
+                <div class="list-item">
+                    <h4>Professional Web Certification</h4>
+                    <p>Verified Institute • 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="glass-widget">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="project-container">
+                    <div class="project-card"><span>Dashboard UI</span></div>
+                    <div class="project-card"><span>Interactive Resume</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="glass-widget">
+                <h2 class="section-title">Get In Touch</h2>
+                <a href="mailto:yourname@email.com" class="cta-btn">Send an Email</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const toggleSwitch = document.querySelector('#checkbox');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        body.className = savedTheme;
+        toggleSwitch.checked = savedTheme === 'light-mode';
+
+        toggleSwitch.addEventListener('change', () => {
+            if (toggleSwitch.checked) {
+                body.className = 'light-mode';
+                localStorage.setItem('theme', 'light-mode');
+            } else {
+                body.className = 'dark-mode';
+                localStorage.setItem('theme', 'dark-mode');
+            }
+        });
+    </script>
+</body>
+</html>
