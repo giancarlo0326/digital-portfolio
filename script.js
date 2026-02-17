@@ -1,10 +1,10 @@
 const toggleSwitch = document.querySelector('#checkbox');
 const body = document.body;
 
-// Load saved theme
-const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+// Default to Light Mode
+const savedTheme = localStorage.getItem('theme') || 'light-mode';
 body.className = savedTheme;
-toggleSwitch.checked = savedTheme === 'light-mode';
+toggleSwitch.checked = (savedTheme === 'light-mode');
 
 toggleSwitch.addEventListener('change', () => {
     if (toggleSwitch.checked) {
